@@ -8,24 +8,17 @@ shell: bash
 
 steps:
   - type: Command
-    name: "Install dependencies"
+    name: "Check files"
     command: |
-      echo "Installing dependencies..."
-      ls
+      echo "Listing files..."
+      ls -l
 
   - type: Command
     name: "Build Step"
     command: |
-      echo "Build started..."
-      echo "Compiling project..."
-
-  - type: Command
-    name: "Test Step"
-    command: |
-      echo "Running tests..."
-      echo "All tests passed"
+      echo "Build running successfully"
 
 outputArtifacts:
-  - name: build_output
+  - name: output
     type: BINARY
     location: .
