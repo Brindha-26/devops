@@ -10,11 +10,15 @@ steps:
   - type: Command
     name: "Check Files"
     command: |
-      echo "OCI DevOps build started"
-      pwd
-      ls -la
+      echo "Listing files"
+      ls -l
 
-outputArtifacts:
-  - name: build_output
-    type: BINARY
-    location: .
+  - type: Command
+    name: "Compile Java Program"
+    command: |
+      javac AddTwoNumbers.java
+
+  - type: Command
+    name: "Run Java Program"
+    command: |
+      java AddTwoNumbers
