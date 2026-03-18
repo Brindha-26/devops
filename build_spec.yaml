@@ -6,12 +6,18 @@ timeoutInSeconds: 600
 
 shell: bash
 
-phases:
-  build:
-    commands:
-      - echo "OCI DevOps build started"
-      - ls -la
+steps:
+  - type: Command
+    name: "Start Build"
+    command: |
+      echo "OCI DevOps build started"
 
-artifacts:
-  files:
-    - '**/*'
+  - type: Command
+    name: "List Files"
+    command: |
+      ls -la
+
+outputArtifacts:
+  - name: build_output
+    type: BINARY
+    location: .
