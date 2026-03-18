@@ -8,13 +8,10 @@ shell: bash
 
 steps:
   - type: Command
-    name: "Start Build"
+    name: "Check Files"
     command: |
       echo "OCI DevOps build started"
-
-  - type: Command
-    name: "List Files"
-    command: |
+      pwd
       ls -la
 
 outputArtifacts:
